@@ -40,34 +40,47 @@ li {
     list-style: none;
 }
 
-    .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--off-white-clr);
+.header {
     width: 100%;
     height: 100px;
-    @include mobile{
-        background-color: red
+    background-color: var(--off-white-clr);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
     }
+
+    @include mobile {
+        background-color: rgb(176, 228, 210);
+    }
+
     &__logo-wrapper {
         color: rgb(10, 10, 10);
         margin-top: 20px;
         font-weight: bold;
         font-size: var(--primary-title-font-size);
-
     }
 
     nav {
+
         display: flex;
         flex-direction: row;
         gap: 100px;
         margin: 10px auto;
+
+        @include mobile {
+            gap: 50px;
+        }
+
         li {
             position: relative;
+
             a {
                 color: var(--dark-clr);
+
                 &::after {
                     content: "";
                     height: 100%;
@@ -76,15 +89,17 @@ li {
                     position: absolute;
                     left: 0;
                     border-bottom: 2px solid var(--dark-clr);
-                    bottom: -10px;
+                    bottom: -14px;
                     opacity: 0;
                     transition: .5s;
-                    color: var( --brand-clr);
+                    color: var(--brand-clr);
                 }
-                &:hover{
+
+                &:hover {
                     font-weight: 700;
-                    color: var( --brand-clr);
+                    color: var(--brand-clr);
                 }
+
                 &:hover::after {
                     opacity: 1;
                 }
@@ -92,11 +107,3 @@ li {
         }
     }
 }
-
-
-// @mixin mobile {
-//     @media only screen and (max-width: 768px) {
-//       @content;
-//     }
-//   }
-  
