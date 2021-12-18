@@ -13,14 +13,12 @@ html {
 :root {
   --light-clr: #FFF;
   --dark-clr: #23272A;
-  --brand-clr: #7289DA;
-  --off-white-clr: #f6f6f6;
-  --general-font-size: 2rem;
-  --primary-title-font-size: 4.8rem;
+  --brand-clr: #163955;
+  --off-white-clr: #f5f5f5;
+  --general-font-size: 1.8rem;
+  --primary-title-font-size: 2.5rem;
   --secondary-title-font-size: 4rem;
   --main-font-family: 'Oxygen', sans-serif;
-  --num-of-grid-columns: 4;
-  --section-spacing: 5.6rem 2.4rem;
   --container-width: 126rem;
 }
 
@@ -29,7 +27,86 @@ body {
   font-family: var(--main-font-family);
 }
 
-header h1 {
-  background-color: red;
+a {
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+li {
+  list-style: none;
+}
+
+.container-default {
+  padding: auto 108px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: var(--off-white-clr);
+  height: 100px;
+}
+
+.container__logo-wrapper {
+  color: #0a0a0a;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: var(--primary-title-font-size);
+}
+
+.container nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 100px;
+  margin: 10px auto;
+}
+
+.container nav li {
+  position: relative;
+}
+
+.container nav li a {
+  color: var(--dark-clr);
+}
+
+.container nav li a::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  border-bottom: 2px solid var(--dark-clr);
+  bottom: -10px;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  color: var(--brand-clr);
+}
+
+.container nav li a:hover {
+  font-weight: 700;
+  color: var(--brand-clr);
+}
+
+.container nav li a:hover::after {
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */
